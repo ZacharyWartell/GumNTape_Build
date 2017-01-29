@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <MSVS_VERSION>2010</MSVS_VERSION>
+    <INSTALL_DIR>..\..\..\..\install\MSVS_$(MSVS_VERSION)\$(Platform)</INSTALL_DIR>
+    <BOOST_INC_DIR>$(INSTALL_DIR)\include\boost-1_63</BOOST_INC_DIR>
+    <BOOST_LIB_DIR>$(INSTALL_DIR)\lib</BOOST_LIB_DIR>
+    <MINIZIP_INC_DIR>$(INSTALL_DIR)\include</MINIZIP_INC_DIR>
+    <MINIZIP_LIB_DIR>$(INSTALL_DIR)\lib</MINIZIP_LIB_DIR>
+    <LIBXML2_INC_DIR>$(INSTALL_DIR)\include\libxml2</LIBXML2_INC_DIR>
+    <LIBXML2_LIB_DIR>$(INSTALL_DIR)\lib</LIBXML2_LIB_DIR>
+    <TINYXML_LIB_DIR>$(INSTALL_DIR)\include\tinyxml</TINYXML_LIB_DIR>
+    <TINYXML_INC_DIR>$(INSTALL_DIR)\lib</TINYXML_INC_DIR>
+    <PCRE_INC_DIR>$(INSTALL_DIR)\include\pcre</PCRE_INC_DIR>
+    <PCRE_LIB_DIR>$(INSTALL_DIR)\lib</PCRE_LIB_DIR>
+    <ICONV_INC_DIR>$(INSTALL_DIR)\include\iconv</ICONV_INC_DIR>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(LIBXML2_INC_DIR);$(TINYXML_INC_DIR);$(PCRE_INC_DIR);$(MINIZIP_INC_DIR);$(ICONV_INC_DIR);$(BOOST_INC_DIR)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_DLL;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <AdditionalLibraryDirectories>$(MINIZIP_LIB_DIR);$(BOOST_LIB_DIR);$(PCRE_LIB_DIR);$(LIBXML2_LIB_DIR);$(TINYXML_LIB_DIR)</AdditionalLibraryDirectories>
+    </Lib>
+    <Link>
+      <AdditionalLibraryDirectories>$(MINIZIP_LIB_DIR);$(BOOST_LIB_DIR);$(PCRE_LIB_DIR);$(LIBXML2_LIB_DIR);$(TINYXML_LIB_DIR)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="MSVS_VERSION">
+      <Value>$(MSVS_VERSION)</Value>
+    </BuildMacro>
+    <BuildMacro Include="INSTALL_DIR">
+      <Value>$(INSTALL_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_INC_DIR">
+      <Value>$(BOOST_INC_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_LIB_DIR">
+      <Value>$(BOOST_LIB_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MINIZIP_INC_DIR">
+      <Value>$(MINIZIP_INC_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MINIZIP_LIB_DIR">
+      <Value>$(MINIZIP_LIB_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LIBXML2_INC_DIR">
+      <Value>$(LIBXML2_INC_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LIBXML2_LIB_DIR">
+      <Value>$(LIBXML2_LIB_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="TINYXML_LIB_DIR">
+      <Value>$(TINYXML_LIB_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="TINYXML_INC_DIR">
+      <Value>$(TINYXML_INC_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PCRE_INC_DIR">
+      <Value>$(PCRE_INC_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PCRE_LIB_DIR">
+      <Value>$(PCRE_LIB_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ICONV_INC_DIR">
+      <Value>$(ICONV_INC_DIR)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
