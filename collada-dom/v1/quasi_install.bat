@@ -20,14 +20,13 @@ set PUBLIC_INC_DIR=%7
 
 set DEBUG=0
 echo --------------------------
-echo Running "quasi_install.bat"
+echo Running "quasi_install.bat" 
 
 if %DEBUG% GEQ 1 (
-    echo %*
+    echo "%*"
 )
 REM cd
 REM exit /b
-
 
 if "%PLATFORM_TOOLS_SET%" == "v100" (
     set MSVS_VERSION=2010
@@ -40,22 +39,27 @@ set INSTALL_BIN_DIR=%INSTALL_DIR%bin
 set INSTALL_LIB_DIR=%INSTALL_DIR%lib
 set INSTALL_INC_DIR=%INSTALL_DIR%include\%INSTALL_INC_PATH_SUFFIX%
 
-
-
 if %DEBUG% GEQ 1 (
-	echo CD: %CD%
-	echo INSTALL_BIN_DIR: %INSTALL_BIN_DIR%
-	if %DEBUG% GEQ 2 dir %INSTALL_BIN_DIR%
-	echo INSTALL_LIB_DIR: %INSTALL_LIB_DIR%
-	if %DEBUG% GEQ 2 dir %INSTALL_LIB_DIR%
-	echo INSTALL_INC_DIR: %INSTALL_INC_DIR%
-	if %DEBUG% GEQ 2 dir %PUBLIC_INC_DIR%
-	echo PUBLIC_INC_DIR: %PUBLIC_INC_DIR%
-	if %DEBUG% GEQ 2 dir %INSTALL_INC_DIR%
-	if %DEBUG% GEQ 2 (
-	    echo TARGET_DIR:
-	    dir %TARGET_DIR%
-	)
+    echo INSTALL_BIN_DIR: "%INSTALL_BIN_DIR%"
+
+    if %DEBUG% GEQ 2 dir "%INSTALL_BIN_DIR%"
+
+    echo INSTALL_LIB_DIR: "%INSTALL_LIB_DIR%"
+
+    if %DEBUG% GEQ 2 dir "%INSTALL_LIB_DIR%"
+
+    echo INSTALL_INC_DIR: "%INSTALL_INC_DIR%"
+
+    if %DEBUG% GEQ 2 dir "%PUBLIC_INC_DIR%"
+
+    echo PUBLIC_INC_DIR: "%PUBLIC_INC_DIR%"
+
+    if %DEBUG% GEQ 2 dir "%INSTALL_INC_DIR%"
+
+    if %DEBUG% GEQ 2 (
+	echo TARGET_DIR:
+	dir %TARGET_DIR%
+    )
 )
 
 REM adapt to MSVS defaults
@@ -65,21 +69,21 @@ if %PLATFORM% == Win32 (
 ) else (
 	set OUTPUT_SUFFIX_DIR=%PLATFORM%\%CONFIGURATION%
 )
-
+exit /b
 REM
 REM debugging stuff
 REM
 
-if %DEBUG% == 1 (
-	cd
-	echo OUTPUT_SUFFIX_DIR: %OUTPUT_SUFFIX_DIR%
+if %DEBUG% GEQ 3 (
+    cd
+    echo OUTPUT_SUFFIX_DIR: %OUTPUT_SUFFIX_DIR%
 
-	echo HERE
-	dir "%OUTPUT_SUFFIX_DIR%"
-	dir "Debug"
+    echo HERE
+    dir "%OUTPUT_SUFFIX_DIR%"
+    dir "Debug"
 
-	echo UP
-	dir "..\%OUTPUT_SUFFIX_DIR%"
+    echo UP
+    dir "..\%OUTPUT_SUFFIX_DIR%"
 )
 
 REM
