@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
-    <MSVS_VERSION>2010</MSVS_VERSION>
     <INSTALL_DIR>..\..\..\..\install\MSVS_$(MSVS_VERSION)\$(Platform)</INSTALL_DIR>
     <BOOST_INC_DIR>$(INSTALL_DIR)\include\boost-1_63</BOOST_INC_DIR>
     <BOOST_LIB_DIR>$(INSTALL_DIR)\lib</BOOST_LIB_DIR>
@@ -30,9 +29,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <BuildMacro Include="MSVS_VERSION">
-      <Value>$(MSVS_VERSION)</Value>
-    </BuildMacro>
     <BuildMacro Include="INSTALL_DIR">
       <Value>$(INSTALL_DIR)</Value>
     </BuildMacro>
