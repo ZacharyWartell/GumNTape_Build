@@ -3,12 +3,16 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros">
     <MSVS_VERSION>2015</MSVS_VERSION>
+    <BOOST_MSVC_STR>vc140</BOOST_MSVC_STR>
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup />
   <ItemGroup>
     <BuildMacro Include="MSVS_VERSION">
       <Value>$(MSVS_VERSION)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BOOST_MSVC_STR">
+      <Value>$(BOOST_MSVC_STR)</Value>
     </BuildMacro>
   </ItemGroup>
 </Project>
