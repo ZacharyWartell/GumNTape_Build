@@ -69,7 +69,7 @@ if %PLATFORM% == Win32 (
 ) else (
 	set OUTPUT_SUFFIX_DIR=%PLATFORM%\%CONFIGURATION%
 )
-exit /b
+
 REM
 REM debugging stuff
 REM
