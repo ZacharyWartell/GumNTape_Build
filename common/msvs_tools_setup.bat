@@ -55,6 +55,11 @@ if "%MSVS_VERSION%"=="2010" (
     pushd "%VS140COMNTOOLS%\..\..\VC"
     call vcvarsall.bat %MSVS_ARCH%  
     popd
+) ELSE IF "%MSVS_VERSION%"=="2022" (
+    REM Setup MSVS 2015 Compiler Settings
+    pushd "%VS143COMNTOOLS%"
+    call vcvarsall.bat %MSVS_ARCH%  
+    popd
 ) ELSE (
     echo MSVS_VERSION %MSVS_VERSION% not yet supported by this script...
     exit /b
